@@ -37,19 +37,19 @@ WHERE "format" != 'paperback';
 
 SELECT "title", "author"
 FROM "longlist"
-WHERE "year" >= 2018 and "year" <= 2019;
-
--- wrong
+WHERE "year" = 2018 OR "year" = 2019;
 
 -- Q8: Get title and author of all books nominated in 2019 and 2020 in hardcover format
 
-SELECT "title", "author", "year", "format"
+SELECT "title", "author"
 FROM "longlist"
-WHERE ("year" >= 2019 and "year" <= 2020) AND "format" = 'hardcover';
-
--- wrong
+WHERE ("year" = 2019 OR "year" = 2020) AND "format" = 'hardcover';
 
 -- Q9: Create one original query of your own.
 
-SELECT "isbn", "title", "author", "translator", "format", "pages", "publisher", "published", "year", "votes", "rating"
-FROM "longlist";
+SELECT *
+FROM "longlist"
+WHERE "format" = 'paperback' 
+  AND "year" = 2018 
+  AND "rating" >= 3.67
+LIMIT 10;

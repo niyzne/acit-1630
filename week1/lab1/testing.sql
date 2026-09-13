@@ -1,8 +1,11 @@
--- Q9: Write one original query of your own.
+-- Q9: Create one original query of your own.
 
-SELECT "title", "author"
+SELECT *
 FROM "longlist"
-WHERE "year" = 2018 OR "year" = 2019;
+WHERE "format" = 'paperback' 
+  AND "year" = 2018 
+  AND "rating" >= 3.67
+LIMIT 10;
 
 -- CREATE TABLE "longlist" (
 --     "isbn" TEXT,
