@@ -18,13 +18,21 @@
 
 -- 4. Write a query to find the titles of episodes that do not yet have a listed topic.
 
-SELECT "title"
-FROM "episodes"
-WHERE "topic" IS NULL;
+-- SELECT "title"
+-- FROM "episodes"
+-- WHERE "topic" IS NULL;
 
 -- 5. Find the title of the holiday episode that aired on December 31st, 2004.
 
+-- SELECT "title"
+-- FROM "episodes"
+-- WHERE "air_date" = '2004-12-31';
+
 -- 6. List the titles of episodes from season 6 2008 that were released early, in 2007.
+
+SELECT "title"
+FROM "episodes"
+WHERE "air_date" = '2004-12-31';
 
 -- 7. Write a SQL query to list the titles and topics of all episodes teaching fractions.
 
