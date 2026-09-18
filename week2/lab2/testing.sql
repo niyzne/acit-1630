@@ -6,7 +6,15 @@
 
 -- 2. List the season number of, and title of, the first episode of every season.
 
+-- SELECT "season", "title"
+-- FROM "episodes"
+-- WHERE "episode_in_season" = 1;
+
 -- 3. Find the production code for the episode “Hackerized!”.
+
+SELECT "production_code"
+FROM "episodes"
+WHERE "title" = 'Hackerized!';
 
 -- 4. Write a query to find the titles of episodes that do not yet have a listed topic.
 
