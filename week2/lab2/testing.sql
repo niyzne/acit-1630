@@ -12,11 +12,15 @@
 
 -- 3. Find the production code for the episode “Hackerized!”.
 
-SELECT "production_code"
-FROM "episodes"
-WHERE "title" = 'Hackerized!';
+-- SELECT "production_code"
+-- FROM "episodes"
+-- WHERE "title" = 'Hackerized!';
 
 -- 4. Write a query to find the titles of episodes that do not yet have a listed topic.
+
+SELECT "title"
+FROM "episodes"
+WHERE "topic" IS NULL;
 
 -- 5. Find the title of the holiday episode that aired on December 31st, 2004.
 
