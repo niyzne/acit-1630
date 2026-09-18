@@ -30,24 +30,50 @@
 
 -- 6. List the titles of episodes from season 6 2008 that were released early, in 2007.
 
-SELECT "title"
-FROM "episodes"
-WHERE "season" = 6 
-  AND "air_date" BETWEEN '2007-01-01' AND '2007-12-31'
+-- SELECT "title"
+-- FROM "episodes"
+-- WHERE "season" = 6 
+--   AND "air_date" BETWEEN '2007-01-01' AND '2007-12-31'
 
 -- 7. Write a SQL query to list the titles and topics of all episodes teaching fractions.
+
+-- SELECT "title", "topic"
+-- FROM "episodes"
+-- WHERE "topic" LIKE '%fractions%';
 
 -- 8. Write a query that counts the number of episodes released in the last 6 years, from 2018 to 2023, inclusive.
 
 --  1. You might find it helpful to know you can use BETWEEN with dates, such as BETWEEN ‘2000-01-01’ AND ‘2000-12-31’.
 
+-- SELECT COUNT("id")
+-- FROM "episodes"
+-- WHERE "air_date" BETWEEN '2018-01-01' AND '2023-12-31';
+
 -- 9. Write a query that counts the number of episodes released in Cyberchase’s first 6 years, from 2002 to 2007, inclusive.
+
+-- SELECT COUNT("id")
+-- FROM "episodes"
+-- WHERE "air_date" BETWEEN '2002-01-01' AND '2007-12-31';
 
 -- 10. Write a SQL query to list the ids, titles, and production codes of all episodes. Order the results by production code, from earliest to latest.
 
+-- SELECT "id", "title", "production_code"
+-- FROM "episodes"
+-- ORDER BY "production_code" ASC;
+
 -- 11. List the titles of episodes from season 5, in reverse alphabetical order.
 
+-- SELECT "title"
+-- FROM "episodes"
+-- WHERE "season" = 5
+-- ORDER BY "title" DESC;
+
 -- 12. Count the number of unique episode titles.
+
+-- SELECT COUNT(DISTINCT "title")
+-- FROM "episodes";
+
+-- =================================================
 
 -- .schema
 -- CREATE TABLE "episodes" (
