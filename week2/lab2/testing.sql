@@ -32,7 +32,8 @@
 
 SELECT "title"
 FROM "episodes"
-WHERE "air_date" = '2004-12-31';
+WHERE "season" = 6 
+  AND "air_date" BETWEEN '2007-01-01' AND '2007-12-31'
 
 -- 7. Write a SQL query to list the titles and topics of all episodes teaching fractions.
 
