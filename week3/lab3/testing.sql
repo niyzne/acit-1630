@@ -1,12 +1,37 @@
 -- In 1.sql, find the names and cities of all traditional public schools in Massachusetts. Do not include charter schools. The type column in the schools table distinguishes public schools from charter schools.
 
+-- SELECT "name", "city"
+-- FROM "schools"
+-- WHERE "type" LIKE '%Public%';
+
 -- In 2.sql, find the names of school districts that are no longer operational. A non-operational district has (non-op) at the end of its name.
+
+-- SELECT "name"
+-- FROM "districts"
+-- WHERE "name" LIKE '%(non-op)%';
 
 -- In 3.sql, find the average per-pupil expenditure across all districts. Name the output column Average District Per-Pupil Expenditure. The per_pupil_expenditure column already contains each district’s average expenditure, and each district should be weighted equally.
 
+-- SELECT AVG("per_pupil_expenditure") AS "Average District Per-Pupil Expenditure"
+-- FROM "expenditures";
+
 -- In 4.sql, find the 10 cities with the most traditional public schools. Return the city and number of public schools, ordered by school count from greatest to least. Break ties alphabetically by city.
 
+-- SELECT "city", COUNT("name")
+-- FROM "schools"
+-- WHERE "type" LIKE '%Public%'
+-- GROUP BY "city"
+-- ORDER BY COUNT("name") DESC, "city" ASC
+-- LIMIT 10;
+
 -- In 5.sql, find cities with three or fewer traditional public schools. Return the city and number of public schools, ordered by school count from greatest to least. Break ties alphabetically by city.
+
+-- SELECT "city", COUNT("name")
+-- FROM "schools"
+-- WHERE "type" LIKE '%Public%'
+-- GROUP BY "city"
+-- HAVING COUNT("name") <= 3
+-- ORDER BY COUNT("name") DESC, "city" ASC
 
 -- In 6.sql, find the names of all schools, public or charter, that reported a 100% graduation rate.
 
