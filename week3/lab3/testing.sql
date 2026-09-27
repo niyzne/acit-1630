@@ -45,6 +45,8 @@
 
 -- In 7.sql, find the names of all schools, public or charter, in the school district named Cambridge. The city of Cambridge contains several districts, so match the district name rather than assuming a district ID.
 
+
+
 -- In 8.sql, display the name of every school district and the number of pupils enrolled in each district. Order the results by district name in ascending order.
 
 -- In 9.sql, find the name or names of the school district or districts with the smallest number of pupils. Return only the district name or names.
