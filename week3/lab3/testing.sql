@@ -60,11 +60,20 @@
 -- ORDER BY "districts"."name" ASC
 
 -- In 9.sql, find the name or names of the school district or districts with the smallest number of pupils. Return only the district name or names.
+-- In 9.sql, find the name(s) of the school district(s) with the smallest number of pupils. Return only the district name(s).
 
-SELECT ""
-
+-- SELECT "districts"."name"
+-- FROM "districts"
+-- JOIN "expenditures"
+--         ON "expenditures"."district_id" = "districts"."id"
+-- WHERE "pupils" IN (
+--   SELECT MIN("expenditures"."pupils")
+--   FROM "expenditures"
+-- );
 
 -- In 10.sql, find the 10 public school districts with the highest per-pupil expenditures. Return each district name and its per-pupil expenditure.
+
+
 
 -- In 11.sql, display each school name, its per-pupil expenditure, and its graduation rate. Assume that a school spends the same amount per pupil as its district. Order the results by per-pupil expenditure from greatest to least, then by school name.
 
