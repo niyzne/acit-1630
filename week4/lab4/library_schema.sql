@@ -1,4 +1,4 @@
--- ## Part 1: Table Creation
+-- ## 3 Part 1: Table Creation
 --
 -- Create a library_schema.sql file containing DDL SQL statements to create the specified schema.
 --
