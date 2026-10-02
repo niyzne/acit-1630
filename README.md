@@ -22,6 +22,23 @@
 - [q12.sql](week2/lab2/q12.sql)
 
 ---
+## Week 3
+
+- [1.sql](week3/lab3/1.sql)
+- [2.sql](week3/lab3/2.sql)
+- [3.sql](week3/lab3/3.sql)
+- [4.sql](week3/lab3/4.sql)
+- [5.sql](week3/lab3/5.sql)
+- [6.sql](week3/lab3/6.sql)
+- [7.sql](week3/lab3/7.sql)
+- [8.sql](week3/lab3/8.sql)
+- [9.sql](week3/lab3/9.sql)
+- [10.sql](week3/lab3/10.sql)
+- [11.sql](week3/lab3/11.sql)
+- [12.sql](week3/lab3/12.sql)
+
+
+---
 reminder: 
 
 `sqlite3 your_database.db < your_script.sql`
