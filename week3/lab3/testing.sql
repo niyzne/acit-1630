@@ -71,50 +71,14 @@
 --   FROM "expenditures"
 -- );
 
-
 -- In 10.sql, find the 10 public school districts with the highest per-pupil expenditures. Return each district name and its per-pupil expenditure.
 
-SELECT "district"."name", "expenditures"."per_pupil_expenditure"
-
-LIMIT 10;
-
-SELECT "districts"."name"
-FROM "districts"
-JOIN "expenditures"
-        ON "expenditures"."district_id" = "districts"."id"
-WHERE "pupils" IN (
-  SELECT MIN("expenditures"."pupils")
-  FROM "expenditures"
-);
-
--- CREATE TABLE "districts" (
---     "id" INTEGER,
---     "name" TEXT,
---     "type" TEXT,
---     "city" TEXT,
---     "state" TEXT,
---     "zip" TEXT,
---     PRIMARY KEY("id")
--- );
--- CREATE TABLE "schools" (
---     "id" INTEGER,
---     "district_id" INTEGER,
---     "name" TEXT,
---     "type" TEXT,
---     "city" TEXT,
---     "state" TEXT,
---     "zip" TEXT,
---     PRIMARY KEY("id"),
---     FOREIGN KEY("district_id") REFERENCES "districts"("id")
--- );
--- CREATE TABLE "expenditures" (
---     "id" INTEGER,
---     "district_id" INTEGER,
---     "pupils" INTEGER,
---     "per_pupil_expenditure" NUMERIC,
---     PRIMARY KEY("id"),
---     FOREIGN KEY("district_id") REFERENCES "districts"("id")
--- );
+-- SELECT "districts"."name", "expenditures"."per_pupil_expenditure"
+-- FROM "districts"
+-- JOIN "expenditures"
+--       ON "expenditures"."district_id" = "districts"."id"
+-- ORDER BY "per_pupil_expenditure" DESC
+-- LIMIT 10;
 
 -- In 11.sql, display each school name, its per-pupil expenditure, and its graduation rate. Assume that a school spends the same amount per pupil as its district. Order the results by per-pupil expenditure from greatest to least, then by school name.
 
