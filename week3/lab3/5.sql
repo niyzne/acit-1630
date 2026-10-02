@@ -5,4 +5,4 @@ FROM "schools"
 WHERE "type" LIKE '%Public%'
 GROUP BY "city"
 HAVING COUNT("name") <= 3
-ORDER BY COUNT("name") DESC, "city" ASC
+ORDER BY COUNT("name") DESC, "city" ASC;

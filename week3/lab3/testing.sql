@@ -31,7 +31,7 @@
 -- WHERE "type" LIKE '%Public%'
 -- GROUP BY "city"
 -- HAVING COUNT("name") <= 3
--- ORDER BY COUNT("name") DESC, "city" ASC
+-- ORDER BY COUNT("name") DESC, "city" ASC;
 
 -- In 6.sql, find the names of all schools, public or charter, that reported a 100% graduation rate.
 
@@ -57,7 +57,7 @@
 -- FROM "districts"
 -- JOIN "expenditures"
 --         ON "expenditures"."district_id" = "districts"."id"
--- ORDER BY "districts"."name" ASC
+-- ORDER BY "districts"."name" ASC;
 
 -- In 9.sql, find the name or names of the school district or districts with the smallest number of pupils. Return only the district name or names.
 -- In 9.sql, find the name(s) of the school district(s) with the smallest number of pupils. Return only the district name(s).
