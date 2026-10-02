@@ -23,21 +23,22 @@
 
 CREATE TABLE IF NOT EXISTS "Authors" (
     "author_id" INTEGER PRIMARY KEY,
-    "name" TEXT NOT NULL DISTINCT
-    "birth_year" INTEGER -- somehow <= 2023
+    "name" TEXT NOT NULL UNIQUE
+    "birth_year" INTEGER CHECK ("birth_year" <= 2023)
 );
 
 CREATE TABLE IF NOT EXISTS "Books" (
     "id" INTEGER PRIMARY KEY,
     "title" TEXT NOT NULL
-    "author_id" INTEGER FOREIGN KEY --somehow refernecing to Authors.author_id
-    "published_year" INTEGER -- between 1900 and 2025
-    "price" REAL NOT NULL -- must be positive
+    "author_id" INTEGER FOREIGN KEY REFERENCES "Authors" ("author_id")
+    "published_year" INTEGER CHECK ("published_year" >= 1900) AND ("published_year" <= 2025)
+    "price" REAL NOT NULL AND NOT <= 0
 );
 
 CREATE TABLE IF NOT EXISTS "Members" (
     "member_id" INTEGER PRIMARY KEY,
-    "name" TEXT NOT NULL DISTINCT,
-    "join_date" TEXT -- default current date?
-    "membership_status" TEXT NOT NULL -- maybe boolean statemnt?
+    "name" TEXT NOT NULL UNIQUE,
+    "join_date" TEXT DEFAULT CURRENT_DATE
+    "membership_status" TEXT NOT NULL
+        CHECK ("membership_status" IN ('Active', 'Inactive'))
 );
