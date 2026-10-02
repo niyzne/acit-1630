@@ -20,7 +20,6 @@
 --     - join_date (TEXT, Default current date)
 --     - membership_status (TEXT, Not Null, Only Active or Inactive)
 
-
 CREATE TABLE IF NOT EXISTS "Authors" (
     "author_id" INTEGER PRIMARY KEY,
     "name" TEXT NOT NULL UNIQUE,
@@ -39,8 +38,8 @@ CREATE TABLE IF NOT EXISTS "Books" (
 
 CREATE TABLE IF NOT EXISTS "Members" (
     "member_id" INTEGER PRIMARY KEY,
-    "name" TEXT NOT NULL UNIQUE,
+    "name" TEXT NOT NULL,
     "join_date" TEXT DEFAULT CURRENT_DATE,
-    "membership_status" TEXT NOT NULL,
+    "membership_status" TEXT NOT NULL
         CHECK ("membership_status" IN ('Active', 'Inactive'))
 );
