@@ -20,26 +20,30 @@
 --     - join_date (TEXT, Default current date)
 --     - membership_status (TEXT, Not Null, Only Active or Inactive)
 
-CREATE TABLE IF NOT EXISTS "Authors" (
-    "author_id" INTEGER PRIMARY KEY,
-    "name" TEXT NOT NULL UNIQUE,
-    "birth_year" INTEGER CHECK ("birth_year" <= 2023)
-);
-
 CREATE TABLE IF NOT EXISTS "Books" (
-    "book_id" INTEGER PRIMARY KEY,
     "title" TEXT NOT NULL,
-    "author_id" INTEGER FOREIGN KEY REFERENCES "Authors" ("author_id"),
     "published_year" INTEGER CHECK (
         "published_year" BETWEEN 1900 AND 2025
     ),
-    "price" REAL NOT NULL CHECK ("price" > 0)
+    "price" REAL NOT NULL CHECK ("price" > 0),
+    "book_id" INTEGER,
+    "author_id" INTEGER,
+    PRIMARY KEY ("book_id"),
+    FOREIGN KEY ("author_id") REFERENCES "Authors" ("author_id")
+);
+
+CREATE TABLE IF NOT EXISTS "Authors" (
+    "name" TEXT NOT NULL UNIQUE,
+    "birth_year" INTEGER CHECK ("birth_year" <= 2023),
+    "author_id" INTEGER,
+    PRIMARY KEY ("author_id")
 );
 
 CREATE TABLE IF NOT EXISTS "Members" (
-    "member_id" INTEGER PRIMARY KEY,
     "name" TEXT NOT NULL,
     "join_date" TEXT DEFAULT CURRENT_DATE,
     "membership_status" TEXT NOT NULL
-        CHECK ("membership_status" IN ('Active', 'Inactive'))
+        CHECK ("membership_status" IN ('Active', 'Inactive')),
+    "member_id" INTEGER,
+    PRIMARY KEY ("member_id")
 );
