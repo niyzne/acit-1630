@@ -66,7 +66,7 @@
 -- FROM "districts"
 -- JOIN "expenditures"
 --         ON "expenditures"."district_id" = "districts"."id"
--- WHERE "pupils" IN (
+-- WHERE "expenditures"."pupils" IN (
 --   SELECT MIN("expenditures"."pupils")
 --   FROM "expenditures"
 -- );
@@ -77,6 +77,7 @@
 -- FROM "districts"
 -- JOIN "expenditures"
 --       ON "expenditures"."district_id" = "districts"."id"
+-- WHERE "districts"."type" LIKE 'Public%'
 -- ORDER BY "per_pupil_expenditure" DESC
 -- LIMIT 10;
 
