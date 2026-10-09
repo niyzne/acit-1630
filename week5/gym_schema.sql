@@ -29,3 +29,11 @@ CREATE TABLE offering (
     FOREIGN KEY (class_id) REFERENCES class (class_id),
     FOREIGN KEY (room_num) REFERENCES room (room_num)
 );
+
+CREATE TABLE member (
+
+);
+
+CREATE TABLE registration (
+
+);
