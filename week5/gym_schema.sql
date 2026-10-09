@@ -39,7 +39,9 @@ CREATE TABLE member (
 
 CREATE TABLE registration (
     member_id INTEGER NOT NULL,
-    FOREIGN KEY (member_id) REFERENCES class (member.member_id),
+    -- FOREIGN KEY (member_id) REFERENCES class (member.member_id),
+    FOREIGN KEY (member_id) REFERENCES class member(member_id),
     offering_id INTEGER NOT NULL,
-    FOREIGN KEY (offering_id) REFERENCES class (offering.offering_id)
+    -- FOREIGN KEY (offering_id) REFERENCES class (offering.offering_id)
+    FOREIGN KEY (offering_id) REFERENCES class offering(offering_id)
 );
