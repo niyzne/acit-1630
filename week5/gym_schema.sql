@@ -31,9 +31,15 @@ CREATE TABLE offering (
 );
 
 CREATE TABLE member (
-
+    member_id INTEGER PRIMARY KEY,
+    first_name TEXT NOT NULL,
+    last_name TEXT NOT NULL,
+    email TEXT NOT NULL UNIQUE
 );
 
 CREATE TABLE registration (
-
+    member_id INTEGER NOT NULL,
+    FOREIGN KEY (member_id) REFERENCES class (member.member_id),
+    offering_id INTEGER NOT NULL,
+    FOREIGN KEY (offering_id) REFERENCES class (offering.offering_id)
 );
