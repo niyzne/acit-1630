@@ -37,6 +37,21 @@
 - [11.sql](week3/lab3/11.sql)
 - [12.sql](week3/lab3/12.sql)
 
+---
+## Week 4
+
+- [library_schema.sql](week4/lab4/library_schema.sql)
+- [library_schema_changes.sql](week4/lab4/library_schema_changes.sql)
+
+---
+## Week 5
+
+- [gym_schema.sql](week5/gym_schema.sql)
+- [import.sql](week5/import.sql)
+- [insert.sql](week5/insert.sql)
+- [update.sql](week5/update.sql)
+- [my_records.sql](week5/my_records.sql)
+- [delete.sql](week5/delete.sql)
 
 ---
 reminder: 
