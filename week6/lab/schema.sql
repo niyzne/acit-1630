@@ -25,16 +25,15 @@ CREATE TABLE IF NOT EXISTS "game" (
 CREATE TABLE IF NOT EXISTS "library" (
     "library_id" INTEGER,
     "user_id" INTEGER NOT NULL,
-    "game_id" INTEGER NOT NULL
+    "game_id" INTEGER NOT NULL,
     "purchase_type" TEXT NOT NULL
-        CHECK ("purchase_type" IN 'Purchase' or 'Rental') -- NOT DONE, CHECK SYNTAX LATER
-    "purchase_date" TEXT NOT NULL
-        CHECK ("purchase_date" the purchase or rental date -- NOT DONE, CHECK SYNTAX LATER
-    "launch_date" TEXT
-        the first launch date, or NULL if not yet launched -- NOT DONE, CHECK SYNTAX LATER
-    "expiry_date" TEXT
-      required for rentals and NULL for purchases -- NOT DONE, CHECK SYNTAX LATER
+        CHECK ("purchase_type" IN 'Purchase' or 'Rental'), -- NOT DONE, CHECK SYNTAX LATER
+    "purchase_date" TEXT NOT NULL,
+    "launch_date" TEXT,
+    "expiry_date" TEXT,
     PRIMARY KEY ("library_id"),
-    FOREIGN KEY ("user_id") REFERENCES "user" ("user_id")
-    FOREIGN KEY ("game_id") REFERENCES "game" ("game_id")
+    FOREIGN KEY ("user_id") REFERENCES "user" ("user_id"),
+    FOREIGN KEY ("game_id") REFERENCES "game" ("game_id"),
+    CHECK (("expiry_date" = 'purchase' AND "expiry_date" IS NULL) 
+      OR ("expiry_date" = 'rental' AND "expiry_date" IS NOT NULL))
 );
