@@ -40,9 +40,9 @@ CREATE TABLE IF NOT EXISTS "library" (
         CHECK(DATE("launch_date") = "launch_date"),
     "expiry_date" TEXT
         CHECK(DATE("expiry_date") = "expiry_date"),
-    CHECK (("expiry_date" = 'purchase' AND "expiry_date" IS NULL) 
-      OR ("expiry_date" = 'rental' AND "expiry_date" IS NOT NULL))
+    CHECK (("expiry_date" = 'Purchase' AND "expiry_date" IS NULL) 
+      OR ("expiry_date" = 'Rental' AND "expiry_date" IS NOT NULL)),
     PRIMARY KEY ("library_id"),
     FOREIGN KEY ("user_id") REFERENCES "user" ("user_id"),
-    FOREIGN KEY ("game_id") REFERENCES "game" ("game_id"),
+    FOREIGN KEY ("game_id") REFERENCES "game" ("game_id")
 );
