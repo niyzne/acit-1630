@@ -87,3 +87,12 @@ WHERE "email" = 'testuser@example.com';
 
 -- The library record must be deleted before the user because library.user_id references user.user_id through a foreign key.
 -- Deleting the library record first prevents a foreign key violation.
+
+SELECT COUNT(*) AS "user_count"
+FROM "user";
+
+SELECT COUNT(*) AS "game_count"
+FROM "game";
+
+SELECT COUNT(*) AS "library_count"
+FROM "library";

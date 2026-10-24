@@ -21,9 +21,9 @@ CREATE TABLE IF NOT EXISTS "game" (
         CHECK(DATE(release_date) = release_date),
     "rating" TEXT NOT NULL
         CHECK ("rating" IN ('Everyone', 'Teen', 'Mature')),
-    "rental_price" NOT NULL
+    "rental_price" REAL NOT NULL
         CHECK ("rental_price" >= 0),
-    "purchase_price" NOT NULL
+    "purchase_price" REAL NOT NULL
         CHECK ("purchase_price" >= 0),
     PRIMARY KEY ("game_id")
 );
